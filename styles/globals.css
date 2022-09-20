@@ -1,231 +1,276 @@
 *{
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fjalla One', sans-serif;
 }
 body{
-  background: url('/images/background.jpg');
-  background-attachment: fixed;
+  background: url("/images/background11.jpg");
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
-  background-repeat: no-repeat;
-  font-family: 'Kaushan Script', cursive;
-  background-color: black;
 }
-#mainOuterDiv{
-  background-color: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
+
+/*myHeader*/
+#myHeaderDiv{
   width: 100%;
-  float: left;
-  overflow: hidden;
-}
-#myHeader{
-  height: 80px;
-  width: 100%;
-  overflow: hidden;
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   z-index: 1;
 }
-#myHeader #Logo,#myHeader #Menu{
-  width: 50%;
-  float: left;
-  height: 100%;
-  text-align: center;
-}
-#myHeader #Logo img{
-  height: calc( 100% - 20px);
-  margin-top: 10px;
-}
-#myHeader #Menu ul{
+#myHeaderDivContent{
+  width: 95%;
+  margin: auto;
   text-align: right;
-  padding-right: 20px;
 }
-#myHeader #Menu li{
-  color: white;
-  text-decoration: none;
-  list-style: none;
-  display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  margin: 25px 7px;
-  padding: 0 5px;
-  position: relative;
-  text-align: center;
-}        
-#myHeader #Menu li::after{
-  content: "";
-  height: 2px;
+#myHeaderDivContent ul{
   width: 100%;
+  height: 60px;
+}
+#myHeaderDivContent li{
+  display: inline;
+  line-height: 60px;
+  padding: 5px 10px;
+  color: rgba(255, 255, 255, 0.877);
+  border:1px solid rgba(255, 255, 255, 0.877);
+  border-radius: 5px;
+  margin:auto 5px;
+  font-size: 0.8rem;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.342), rgba(0,0,0,0));
+}
+#myHeaderDivContent li:hover{
+  color: rgba(0, 0, 0, 0.747);
   background-color: white;
-  bottom: -5px;
-  left: 0;
+  border:1px solid rgba(0, 0, 0, 0.192);
+  background-image: none;
+  cursor: pointer;
+}
+/*Animation Stuff*/
+#outerDiv{
+  width: 100%;
+  height: 500px;
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+#innerDiv{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#innerDiv img, #myPlateDiv{
+  width: 100%;
+  height: 100%;
   position: absolute;
-  margin:auto;
 }
-#myHeader #Menu li:hover::after{
-  background-color: rgb(0, 171, 171);
-  height: 5px;
+#myPlateDiv{
+  background: url("/images/plate.png");
+  background-size: 100% auto;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
 }
-#myHeader #Menu li:hover{
-  color: rgb(0, 171, 171);
-  cursor: pointer;            
+#myPlateDiv h1{
+  margin: auto;
+  color:white;
+  font-size: 6rem;
+  font-family: 'Finger Paint', cursive;
+  font-weight: bolder;
+}
+#h1holder{
+  z-index: 0.1;
+  margin: auto;
+  padding-top: 150px;
+}
+#h1holder h1, #h1holder h4, #h1holder h3{
+  margin: auto;
+  text-align: center;
+  color: white;
+  z-index: 0.1;
+}
+#h1holder h4, #h1holder h3{
+  color: black;
+  background-color: rgba(255,255,255,0.3);
+  margin: 5px;
+  padding: 9px;
+  text-shadow: 1px 1px 4px gray white;
+}
+#h1holder h3{
+  
+  background-color: rgba(255,255,255,0.8);
+  text-shadow: 1px 1px 4px white;
+  
+}
+@keyframes rotateKnife {
+  from {   
+  transform: rotate(180deg);
+  right: -500px;
+  } 
+  to{                
+  transform: rotate(0);
+  right: 0;
+  }           
 }
 
+#innerDiv #p1{
+  z-index: 1;
+  animation-name: rotateKnife;
+  animation-duration: 2s;
+}
+@keyframes rotateFork {
+  from {   
+  transform: rotate(180deg);
+  left: -500px;
+  } 
+  to{                
+  transform: rotate(0);
+  left: 0;
+  }           
+}
 
-#myHeadingDiv{
+#innerDiv #p3{
+  z-index: 1;
+  animation-name: rotateFork;
+  animation-duration: 2s;
+}
+/*topDataDiv*/
+#topDataDiv{
   width: 100%;
   min-height: 100vh;
+  background: url("/images/background1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   display: flex;
   align-items: center;
 }
-#myHeadingDiv #centerDiv{
-  width: 60%;
-  max-width: 400px;
-  align-self: center;
-  margin: auto;
-  text-align: center;
+#myPlateDiv{
   display: flex;
+  align-items: center;
+  padding-top: 10px;
 }
-#myHeadingDiv #centerDiv{
-  width: 80%;
-  height: 80vw;
-  max-width: 800px;
-  max-height: 400px;
-  background: url('/images/logo.png');
-  background-size: auto 100%;
-  background-position:center;
-  background-repeat: no-repeat;
-}
-#headingHolder{
-  margin: auto;
-  position: relative;
-}
-#myHeadingDiv #centerDiv h1{
-  margin: auto;
-  font-size: 4rem;
-  text-align: center;
-  color:white;
-  text-shadow: 2px 2px 10px black;
-  width: 90%;
-  float: left;
-}
-#myHeadingDiv #centerDiv p{
-  margin: auto;
-  background: url('/images/brush.png');
-  background-size: 100% 100%;
-  padding: 7px 25px;
-  font-size: 1.4rem;
-  color:rgb(74, 71, 71);
-  float: left;
-  text-shadow: 1px 1px white;
-}
-#whatWeDoDivOuter{
-  min-height: calc( 100vh - 80px );
+
+/*My COntent*/
+#myContentDiv{
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-}
-#whatWeDoDiv{
-  width: 90%;
-  max-width: 1100px;
   margin: auto;
-  padding: 60px 0;
-  background: url('/images/service.png');
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-}
-#whatWeDoHolder,#whatWeDoData{
-  background: url('/images/brush.png');
-  background-size: 100% 100%;
-  overflow: hidden;
-  width: 60%;
-  float: right;
-}
-#ContactUsData a{
-  text-decoration: none;
-  color:rgb(74,71,71);
-}
-#whatWeDoDiv h2,#whatWeDoDiv p{
-  margin: 10px 10%;
-  width: 80%;
-  font-size: 1.4rem;
-}
-#whatWeDoData{
-  text-shadow: 2px 2px white;
-}
-#contactUsDiv{           
-  min-height: calc( 100vh - 80px );
-  width: 100%;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
 }
-#contactUsDiv p{
+#myContentDiv:nth-child(even){
+  background-color: rgba(34, 34, 34, 0.712);
+}
+#myContentDiv > div{
+  width: 90%;
+  margin: auto;
+  background-color:white;
+  display: flex;
+}
+#myContentDiv #imgContent, #myContentDiv #textContent{
+  width: 50%;
+  display: flex;
+  margin: auto;
+}
+#myContentDiv #imgContent{
+  box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.5);
+}
+#imgContent img{
+  width: 100%;
+}
+#myContentDiv #textContent{
+  padding: 15px;
+}
+#textContent div{
+  width: 90%;
+  margin: auto;
+}
+
+
+/*myFooterDiv*/
+#myFooterDiv{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(34, 34, 34, 0.712);
+  display: flex;
+}
+#myFooterDiv #myFooterDivContent{
+  margin:auto;
+  width: 90%;
+}
+#myFooterDivContent div{
+  width: 50%;
+  float: left;
   text-align: center;
-  color: white;
+  padding:50px 0;
+}
+#myFooterDivContent div h2{
   margin: 20px auto;
-  font-size: 1.5rem;
-}
-#contactUsHolder{
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 0;
-}
-#ContactUsHolder,#ContactUsData{
-  background: url('/images/brush.png');
-  background-size: 100% 100%;
-  overflow: hidden;
-  width: 80%;
-  margin: auto;
-  padding: 10px 0;
-}
-
-#ContactUsHolder h2,#ContactUsData p{
-  text-align: center;
-  color:rgb(74, 71, 71);
-  font-weight: bold;
-  margin: 10px auto;
-  text-shadow:1px 1px white;
-
-}
-#footerDiv{
-  background-color: black;
-  padding: 20px 0;
-}
-#footerDiv p{
-  width: 90%;
-  margin: auto;
-  text-align: center;
   color:white;
 }
-@media (max-width: 800px){
-  #whatWeDoDiv{
-      background-size: 100% auto;
-      padding:150px 0;
-      margin: 100px auto 0 auto;
-  }
-  #whatWeDoHolder,#whatWeDoData{
-      width: 95%;
-      float: none;
-      margin:auto;
-  }
+#myFooterDivContent div ul li{
+  list-style: none;
+  text-decoration: none;
+  padding:5px 0;
 }
-@media(max-width: 480px){
-  #myHeader{
-      height: 50px;
+#myFooterDivContent div ul{
+  width: 90%;
+  max-width:300px;
+  margin: auto;
+  color:white;
+}
+#myFooterDivContent div ul li:hover{
+  background-color: white;
+  color:black;
+}
+#myFooterDivContent form{
+  width: 90%;
+  max-width:250px;
+  margin:auto;    
+}
+#myFooterDivContent form input{
+  width: 100%;
+  height: 35px;
+  margin-top: 5px; 
+  text-indent: 7px;
+  border: 0;
+}
+#myFooterDivContent form .inoutfillSize{
+  color:rgb(255, 255, 255);
+  background-color: rgba(1, 122, 11, 0.877);
+}
+#footerLeftDiv h4, #footerLeftDiv h5, #footerLeftDiv h3{
+  color: white;
+  margin-top: 10px;
+}
+
+#mainFooter{
+  width: 100%;
+  background-color: white;
+  padding: 12px 0;
+  text-align: center;
+}
+
+@media(max-width: 900px){
+  #myContentDiv > div{
+      display: inline-table;
   }
-  #myHeader #Menu{
-      display: none;
+  #myContentDiv #imgContent, #myContentDiv #textContent{
+  width: 100% !important;
   }
-  #myHeader #Logo{
+  #myFooterDivContent div{
       width: 100%;
   }
+  
 }
-@media(max-width:390px){
-  #headingHolder h1{
-      font-size: 2.5rem !important;
-      color: red;
+@media(max-width: 500px){
+  #p1,#p3{
+      display: none;
+  }
+  #myPlateDiv{
+      background: none;
+      background-color: rgba(0,0,0,0.4);
+  }
+  #h1holder h4{
+      background-color: rgba(255,255,255,0.8);
   }
 }
