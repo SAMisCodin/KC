@@ -153,7 +153,7 @@ export default function Home() {
             }
             else{
               if(myScroll2>60){
-                document.getElementById("myHeaderDiv").style.backgroundColor = 'rgba(0,0,0,0.7)';
+                document.getElementById("myHeaderDiv").style.backgroundColor = 'rgba(0,0,0,0.9)';
               }
               else if(myScroll2<60){
                 document.getElementById("myHeaderDiv").style.backgroundColor = 'rgba(0,0,0,0)';
