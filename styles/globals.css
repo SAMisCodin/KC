@@ -1,276 +1,294 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Fjalla One', sans-serif;
+* {
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:Fjalla One,sans-serif
 }
-body{
-  background: url("/images/background11.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+body {
+ background:url(/images/background11.jpg);
+ background-size:cover;
+ background-attachment:fixed;
+ background-position:50%
 }
-
-/*myHeader*/
-#myHeaderDiv{
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
+#myHeaderDiv {
+ width:100%;
+ position:fixed;
+ top:0;
+ left:0;
+ z-index:9
 }
-#myHeaderDivContent{
-  width: 95%;
-  margin: auto;
-  text-align: right;
+#myHeaderDivContent {
+ width:95%;
+ margin:auto;
+ text-align:right
 }
-#myHeaderDivContent ul{
-  width: 100%;
-  height: 60px;
+#myHeaderDivContent ul {
+ width:100%;
+ height:60px
 }
-#myHeaderDivContent li{
-  display: inline;
-  line-height: 60px;
-  padding: 5px 10px;
-  color: rgba(255, 255, 255, 0.877);
-  border:1px solid rgba(255, 255, 255, 0.877);
-  border-radius: 5px;
-  margin:auto 5px;
-  font-size: 0.8rem;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.342), rgba(0,0,0,0));
+#myHeaderDivContent li {
+ display:inline;
+ line-height:60px;
+ padding:5px 10px;
+ color:hsla(0,0%,100%,.877);
+ border:1px solid hsla(0,0%,100%,.877);
+ border-radius:5px;
+ margin:auto 5px;
+ font-size:.8rem;
+ background-image:linear-gradient(90deg,rgba(0,0,0,.342),transparent)
 }
-#myHeaderDivContent li:hover{
-  color: rgba(0, 0, 0, 0.747);
-  background-color: white;
-  border:1px solid rgba(0, 0, 0, 0.192);
-  background-image: none;
-  cursor: pointer;
+#myHeaderDivContent li:hover {
+ color:rgba(0,0,0,.747);
+ background-color:#fff;
+ border:1px solid rgba(0,0,0,.192);
+ background-image:none;
+ cursor:pointer
 }
-/*Animation Stuff*/
-#outerDiv{
-  width: 100%;
-  height: 500px;
-  max-width: 500px;
-  margin: auto;
-  overflow: hidden;
+#outerDiv {
+ width:100%;
+ height:500px;
+ max-width:500px;
+ margin:auto;
+ overflow:hidden
 }
-#innerDiv{
-  width: 100%;
-  height: 100%;
-  position: relative;
+#innerDiv {
+ width:100%;
+ height:100%;
+ position:relative
 }
-#innerDiv img, #myPlateDiv{
-  width: 100%;
-  height: 100%;
-  position: absolute;
+#innerDiv img,
+#myPlateDiv {
+ width:100%;
+ height:100%;
+ position:absolute
 }
-#myPlateDiv{
-  background: url("/images/plate.png");
-  background-size: 100% auto;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
+#myPlateDiv {
+ background:url(/images/plate.png);
+ background-size:100% auto;
+ background-position-y:bottom;
+ background-repeat:no-repeat
 }
-#myPlateDiv h1{
-  margin: auto;
-  color:white;
-  font-size: 6rem;
-  font-family: 'Finger Paint', cursive;
-  font-weight: bolder;
+#myPlateDiv h1 {
+ margin:auto;
+ color:#fff;
+ font-size:6rem;
+ font-family:Finger Paint,cursive;
+ font-weight:bolder
 }
-#h1holder{
-  z-index: 0.1;
-  margin: auto;
-  padding-top: 150px;
+#h1holder {
+ z-index:2;
+ margin:auto;
+ padding-top:150px
 }
-#h1holder h1, #h1holder h4, #h1holder h3{
-  margin: auto;
-  text-align: center;
-  color: white;
-  z-index: 0.1;
+#h1holder h1,
+#h1holder h3,
+#h1holder h4 {
+ margin:auto;
+ text-align:center;
+ color:#fff;
+ z-index:.1
 }
-#h1holder h4, #h1holder h3{
-  color: black;
-  background-color: rgba(255,255,255,0.3);
-  margin: 5px;
-  padding: 9px;
-  text-shadow: 1px 1px 4px gray white;
+#h1holder h3,
+#h1holder h4 {
+ color:#000;
+ background-color:hsla(0,0%,100%,.3);
+ margin:5px;
+ padding:9px;
+ text-shadow:1px 1px 4px gray #fff
 }
-#h1holder h3{
-  
-  background-color: rgba(255,255,255,0.8);
-  text-shadow: 1px 1px 4px white;
-  
+#h1holder h3 {
+ background-color:hsla(0,0%,100%,.8);
+ text-shadow:1px 1px 4px #fff
+}
+@-webkit-keyframes rotateKnife {
+ 0% {
+  transform:rotate(180deg);
+  right:-500px
+ }
+ to {
+  transform:rotate(0);
+  right:0
+ }
 }
 @keyframes rotateKnife {
-  from {   
-  transform: rotate(180deg);
-  right: -500px;
-  } 
-  to{                
-  transform: rotate(0);
-  right: 0;
-  }           
+ 0% {
+  transform:rotate(180deg);
+  right:-500px
+ }
+ to {
+  transform:rotate(0);
+  right:0
+ }
 }
-
-#innerDiv #p1{
-  z-index: 1;
-  animation-name: rotateKnife;
-  animation-duration: 2s;
+#innerDiv #p1 {
+ z-index:1;
+ -webkit-animation-name:rotateKnife;
+ animation-name:rotateKnife;
+ -webkit-animation-duration:2s;
+ animation-duration:2s
+}
+@-webkit-keyframes rotateFork {
+ 0% {
+  transform:rotate(180deg);
+  left:-500px
+ }
+ to {
+  transform:rotate(0);
+  left:0
+ }
 }
 @keyframes rotateFork {
-  from {   
-  transform: rotate(180deg);
-  left: -500px;
-  } 
-  to{                
-  transform: rotate(0);
-  left: 0;
-  }           
+ 0% {
+  transform:rotate(180deg);
+  left:-500px
+ }
+ to {
+  transform:rotate(0);
+  left:0
+ }
 }
-
-#innerDiv #p3{
-  z-index: 1;
-  animation-name: rotateFork;
-  animation-duration: 2s;
+#innerDiv #p3 {
+ z-index:1;
+ -webkit-animation-name:rotateFork;
+ animation-name:rotateFork;
+ -webkit-animation-duration:2s;
+ animation-duration:2s
 }
-/*topDataDiv*/
-#topDataDiv{
-  width: 100%;
-  min-height: 100vh;
-  background: url("/images/background1.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  display: flex;
-  align-items: center;
+#topDataDiv {
+ width:100%;
+ min-height:100vh;
+ background:url(/images/background1.jpg);
+ background-size:cover;
+ background-attachment:fixed;
+ background-position:50%
 }
-#myPlateDiv{
-  display: flex;
-  align-items: center;
-  padding-top: 10px;
+#myPlateDiv,
+#topDataDiv {
+ display:flex;
+ align-items:center
 }
-
-/*My COntent*/
-#myContentDiv{
-  width: 100%;
-  margin: auto;
-  min-height: 100vh;
-  display: flex;
+#myPlateDiv {
+ padding-top:10px
 }
-#myContentDiv:nth-child(even){
-  background-color: rgba(34, 34, 34, 0.712);
+#myContentDiv {
+ width:100%;
+ margin:auto;
+ min-height:100vh;
+ display:flex
 }
-#myContentDiv > div{
-  width: 90%;
-  margin: auto;
-  background-color:white;
-  display: flex;
+#myContentDiv:nth-child(2n) {
+ background-color:rgba(34,34,34,.712)
 }
-#myContentDiv #imgContent, #myContentDiv #textContent{
-  width: 50%;
-  display: flex;
-  margin: auto;
+#myContentDiv>div {
+ width:90%;
+ margin:auto;
+ background-color:#fff;
+ display:flex
 }
-#myContentDiv #imgContent{
-  box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.5);
+#myContentDiv #imgContent,
+#myContentDiv #textContent {
+ width:50%;
+ display:flex;
+ margin:auto
 }
-#imgContent img{
-  width: 100%;
+#myContentDiv #imgContent {
+ box-shadow:0 0 40px 10px rgba(0,0,0,.5)
 }
-#myContentDiv #textContent{
-  padding: 15px;
+#imgContent img {
+ width:100%
 }
-#textContent div{
-  width: 90%;
-  margin: auto;
+#myContentDiv #textContent {
+ padding:15px
 }
-
-
-/*myFooterDiv*/
-#myFooterDiv{
-  width: 100%;
-  min-height: 100vh;
-  background-color: rgba(34, 34, 34, 0.712);
-  display: flex;
+#textContent div {
+ width:90%;
+ margin:auto
 }
-#myFooterDiv #myFooterDivContent{
-  margin:auto;
-  width: 90%;
+#myFooterDiv {
+ width:100%;
+ min-height:100vh;
+ background-color:rgba(34,34,34,.712);
+ display:flex
 }
-#myFooterDivContent div{
-  width: 50%;
-  float: left;
-  text-align: center;
-  padding:50px 0;
+#myFooterDiv #myFooterDivContent {
+ margin:auto;
+ width:90%
 }
-#myFooterDivContent div h2{
-  margin: 20px auto;
-  color:white;
+#myFooterDivContent div {
+ width:50%;
+ float:left;
+ text-align:center;
+ padding:50px 0
 }
-#myFooterDivContent div ul li{
-  list-style: none;
-  text-decoration: none;
-  padding:5px 0;
+#myFooterDivContent div h2 {
+ margin:20px auto;
+ color:#fff
 }
-#myFooterDivContent div ul{
-  width: 90%;
-  max-width:300px;
-  margin: auto;
-  color:white;
+#myFooterDivContent div ul li {
+ list-style:none;
+ text-decoration:none;
+ padding:5px 0
 }
-#myFooterDivContent div ul li:hover{
-  background-color: white;
-  color:black;
+#myFooterDivContent div ul {
+ width:90%;
+ max-width:300px;
+ margin:auto;
+ color:#fff
 }
-#myFooterDivContent form{
-  width: 90%;
-  max-width:250px;
-  margin:auto;    
+#myFooterDivContent div ul li:hover {
+ background-color:#fff;
+ color:#000
 }
-#myFooterDivContent form input{
-  width: 100%;
-  height: 35px;
-  margin-top: 5px; 
-  text-indent: 7px;
-  border: 0;
+#myFooterDivContent form {
+ width:90%;
+ max-width:250px;
+ margin:auto
 }
-#myFooterDivContent form .inoutfillSize{
-  color:rgb(255, 255, 255);
-  background-color: rgba(1, 122, 11, 0.877);
+#myFooterDivContent form input {
+ width:100%;
+ height:35px;
+ margin-top:5px;
+ text-indent:7px;
+ border:0
 }
-#footerLeftDiv h4, #footerLeftDiv h5, #footerLeftDiv h3{
-  color: white;
-  margin-top: 10px;
+#myFooterDivContent form .inoutfillSize {
+ color:#fff;
+ background-color:rgba(1,122,11,.877)
 }
-
-#mainFooter{
-  width: 100%;
-  background-color: white;
-  padding: 12px 0;
-  text-align: center;
+#footerLeftDiv h3,
+#footerLeftDiv h4,
+#footerLeftDiv h5 {
+ color:#fff;
+ margin-top:10px
 }
-
-@media(max-width: 900px){
-  #myContentDiv > div{
-      display: inline-table;
-  }
-  #myContentDiv #imgContent, #myContentDiv #textContent{
-  width: 100% !important;
-  }
-  #myFooterDivContent div{
-      width: 100%;
-  }
-  
+#mainFooter {
+ width:100%;
+ background-color:#fff;
+ padding:12px 0;
+ text-align:center
 }
-@media(max-width: 500px){
-  #p1,#p3{
-      display: none;
-  }
-  #myPlateDiv{
-      background: none;
-      background-color: rgba(0,0,0,0.4);
-  }
-  #h1holder h4{
-      background-color: rgba(255,255,255,0.8);
-  }
+@media(max-width:900px) {
+ #myContentDiv>div {
+  display:inline-table
+ }
+ #myContentDiv #imgContent,
+ #myContentDiv #textContent {
+  width:100%!important
+ }
+ #myFooterDivContent div {
+  width:100%
+ }
+}
+@media(max-width:500px) {
+ #p1,
+ #p3 {
+  display:none
+ }
+ #myPlateDiv {
+  background:none;
+  background-color:rgba(0,0,0,.4)
+ }
+ #h1holder h4 {
+  background-color:hsla(0,0%,100%,.8)
+ }
 }
